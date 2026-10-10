@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+:root {
+  /* Colors - Dân Gian Palette */
+  --paper: #F4EBD9;        /* Main page background */
+  --paper-light: #FFFDF7;  /* Card, panel surfaces */
+  --ink: #1E1B18;          /* Primary text, borders, hard shadows */
+  --ink-soft: #5A5148;     /* Secondary text */
+  --son: #D9442B;          /* Cinnabar red - accents */
+  --son-strong: #B8321C;   /* Dark cinnabar - primary button bg */
+  --hoe: #E9B824;          /* Hoe yellow - active chips, highlights */
+  --cham: #2F4A7A;         /* Indigo blue - frame borders, links */
+  --cham-light: #DCE4F0;   /* Light indigo background */
+  --white: #FFFFFF;
+
+  /* Culture Guard Colors */
+  --guard-ok: #3E7D4F;     /* Green - "Hài hòa" */
+  --guard-warn: #E9B824;   /* Yellow - "Cân nhắc" (Text must be --ink) */
+  --guard-bad: #8E1B1B;    /* Dark red - "Chưa phù hợp" */
+
+  /* Fonts */
+  --font-display: 'Baloo 2', sans-serif;
+  --font-body: 'Be Vietnam Pro', sans-serif;
+
+  /* Typography Scale */
+  --text-display: clamp(32px, 5vw, 44px);
+  --text-h1: clamp(24px, 4vw, 28px);
+  --text-h2: 20px;
+  --text-body: 16px;       /* line-height: 1.6 */
+  --text-small: 14px;
+  --text-caption: 12px;    /* Minimum font size */
+
+  /* Border & Shadows (Sticker Style) */
+  --border: 2px solid var(--ink);
+  --border-strong: 3px solid var(--ink);
+  --shadow-hard: 4px 4px 0 var(--ink);
+  --shadow-press: 2px 2px 0 var(--ink);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Transitions */
+  --motion-fast: 150ms ease-out;
+  --motion-base: 250ms ease-out;
+}
+
+@theme {
+  --color-paper: #F4EBD9;
+  --color-paper-light: #FFFDF7;
+  --color-ink: #1E1B18;
+  --color-ink-soft: #5A5148;
+  --color-son: #D9442B;
+  --color-son-strong: #B8321C;
+  --color-hoe: #E9B824;
+  --color-cham: #2F4A7A;
+  --color-cham-light: #DCE4F0;
+  --color-guard-ok: #3E7D4F;
+  --color-guard-warn: #E9B824;
+  --color-guard-bad: #8E1B1B;
+
+  --font-display: 'Baloo 2', sans-serif;
+  --font-body: 'Be Vietnam Pro', sans-serif;
+}
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background-color: #F4EBD9;
+  color: #1E1B18;
+  line-height: 1.6;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Baloo 2', sans-serif;
+}
+
+/* Custom Dân Gian Sticker & Block Utilities (No gradients, no soft shadows, no modern soft borders) */
+.btn-dongho {
+  font-family: 'Baloo 2', sans-serif;
+  border: 2px solid #1E1B18;
+  box-shadow: 4px 4px 0 #1E1B18;
+  transition: transform 150ms ease-out, box-shadow 150ms ease-out;
+  touch-action: manipulation;
+}
+.btn-dongho:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 #1E1B18;
+}
+.btn-dongho:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #1E1B18;
+}
+
+.card-dongho {
+  border: 2px solid #1E1B18;
+  box-shadow: 4px 4px 0 #1E1B18;
+  background-color: #FFFDF7;
+}
+
+.card-dongho-strong {
+  border: 3px solid #1E1B18;
+  box-shadow: 5px 5px 0 #1E1B18;
+  background-color: #FFFDF7;
+}
+
+/* Die-cut woodblock border pattern */
+.woodblock-stripes {
+  background-color: #F4EBD9;
+  background-image: repeating-linear-gradient(45deg, #1E1B18 0, #1E1B18 2px, transparent 0, transparent 8px);
+}
+
+/* Custom scrollbars that match the paper & ink style */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EBD9;
+  border-left: 2px solid #1E1B18;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E1B18;
+  border-radius: 0;
+}
+
+/* Storyteller Animations & Accessibility */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bubble-animate {
+  animation: slideUpFade 200ms ease-out forwards;
+}
+
+@keyframes pulseOnce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); box-shadow: 6px 6px 0 #1E1B18; }
+  100% { transform: scale(1); }
+}
+
+.pulse-once {
+  animation: pulseOnce 800ms ease-in-out;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.85; }
+}
+
+.pulse-gentle {
+  animation: gentlePulse 1.8s infinite ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble-animate,
+  .pulse-once,
+  .pulse-gentle,
+  .btn-dongho {
+    animation: none !important;
+    transition: none !important;
+  }
+}

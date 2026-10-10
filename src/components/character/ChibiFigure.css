@@ -1,0 +1,133 @@
+.cb-skin {
+  fill: var(--cb-skin, #F8DCC4);
+}
+
+.cb-shirt {
+  fill: var(--cb-shirt, #FBF7EE);
+}
+
+.cb-shirt-shade {
+  fill: var(--cb-shirt-shade, #E8E1D2);
+}
+
+.cb-pants {
+  fill: var(--cb-pants, #2F4A7A);
+}
+
+.cb-pants-shade {
+  fill: var(--cb-pants-shade, #24395F);
+}
+
+.cb-shoe {
+  fill: #FFFFFF;
+}
+
+.cb-sole {
+  fill: #E8E1D2;
+}
+
+.cb-mouth {
+  fill: #D9442B;
+}
+
+.cb-blush {
+  fill: #F2A7A0;
+  opacity: 0.6;
+}
+
+.cb-shadow {
+  fill: #1E1B18;
+  opacity: 0.12;
+}
+
+.cb-outline {
+  stroke: #1E1B18;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.cb-detail {
+  fill: none;
+  stroke: #1E1B18;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.cb-feature {
+  fill: none;
+  stroke: #1E1B18;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+}
+
+.cb-hair-outline {
+  fill: #1E1B18;
+  stroke: #1E1B18;
+  stroke-width: 6;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.cb-hair {
+  fill: var(--cb-hair, #1E1B18);
+}
+
+.cb-hair-fade {
+  fill: var(--cb-hair, #1E1B18);
+  opacity: .8;
+}
+
+.cb-hair-strand {
+  fill: none;
+  stroke: #1E1B18;
+  stroke-opacity: .45;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.cb-hair-light {
+  fill: #FFFFFF;
+  opacity: .3;
+}
+
+.cb-hair-loose {
+  fill: none;
+  stroke: var(--cb-hair, #1E1B18);
+  stroke-width: 2;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.cb-hair-part {
+  fill: none;
+  stroke: #1E1B18;
+  stroke-opacity: .6;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.cb-hair-tie {
+  fill: #1E1B18;
+}
+
+/* Optional: 120ms pop on whole character group after committed swap */
+@keyframes characterPop {
+  0% {
+    transform: scale(0.985);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.character-pop {
+  animation: characterPop 120ms ease-out;
+  transform-origin: 200px 300px;
+}
+
